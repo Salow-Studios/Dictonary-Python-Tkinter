@@ -4,14 +4,14 @@ from PyDictionary import PyDictionary
 
 def buttonClick():
     dictionary = PyDictionary()
-    d = dictionary.meaning(input_value.get())
+    meaning = dictionary.meaning(input_value.get())
+    print(meaning)
     text = ""
     b = "•"
-    print(d)
-    for key in d.keys():
+    for key in meaning.keys():
         text += key.capitalize()+":\n"
-        for t in d[key]:
-            text += b+t+"\n"
+        for value in meaning[key]:
+            text += b+value+"\n"
     print(text)
     output.delete(CURRENT, END)
     output.insert(CURRENT, text)
